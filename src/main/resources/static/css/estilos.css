@@ -1,0 +1,42 @@
+ @charset "utf-8";
+
+
+
+#pi{
+ 	
+	text-align: center !important;
+	font-family: sans-serif; 
+	
+	   
+}
+ body p{
+ font-family: sans-serif;
+ font-weight: bold;
+ font-style: italic;
+ 
+ 
+ }
+ div h1{
+ text-align: center;
+ text-decoration: underline;
+ }
+#lista{
+	text-align:center;
+	font-family: sans-serif;
+}
+	
+#home{
+	text-align: center;
+	font-family:cursive;
+	
+	
+	}
+	
+	
+
+ 
+	
+
+
+	
+

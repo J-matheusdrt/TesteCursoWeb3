@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corrida RS</title>
+
+<link rel="stylesheet" type="text/css" href="css/estilos.css">
+<script src="js/scripts.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+
+	<div class="container">
+
+
+		<div class="row">
+			<div class="col-md-4">
+				<h1>LISTA DE PARTICIPANTES</h1>
+			</div>
+			<div class="col-md-1">
+				<a href="/novo"> <img src="img/add.png"
+					style="height: 40px; padding-top: 10px;">
+				</a>
+			</div>
+		</div>
+
+<div id="home" class="p-3 mb-2 bg-secondary text-white">
+		<div class="row" style="font-style:oblique;padding: 20px;">
+
+			<div class="col-md-1" style="margin-left:-20px; ">CÓDIGO</div>
+			<div class="col-md-1">NOME</div>
+			<div class="col-md-1"><span style="margin-left: 20px;">SEXO</span></div>
+			<div class="col-md-2">TIPO DE MOTO</div>
+			<div class="col-md-1">CILINDRADA</div>
+			<div class="col-md-3">TEMPO PILOTAGEM</div>
+			
+			</div>
+</div>
+
+		<div th:each="objeto : ${listaCorrida}">
+			<div class="row" style="margin-left: 20px">
+				<div class="col-md-1" th:text="${objeto.codigo}"></div>
+				<div class="col-md-1" th:text="${objeto.nome}"></div>
+				<div class="col-md-1" th:text="${objeto.sexo}"></div>
+				<div class="col-md-2" th:text="${objeto.tipo}"></div>
+				<div class="col-md-1" th:text="${objeto.cilindrada}"></div>
+				<div class="col-md-3" th:text="${objeto.tempo}"></div>
+
+
+				<div class="col-md-1">
+					<a th:href="@{'/editar/' + ${objeto.codigo}}">editar</a>
+				</div>
+				<div class="col-md-1">
+					<a th:href="@{'/excluir/' + ${objeto.codigo}}">excluir</a>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="container">
+		<br> <a href="/"><button
+				class="btn btn-secondary btn-lg btn-block">Sair</button></a>
+	</div>
+
+</body>
+
+</html>

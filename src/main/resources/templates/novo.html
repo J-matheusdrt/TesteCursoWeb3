@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Corrida RS</title>
+		
+		
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<script src="js/scripts.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+		<script src="../js/bootstrap.min.js"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+	
+	<body id="novo">
+		
+		<div class="container">
+			
+			
+			<div class="row">
+				<div class="col-md-12">
+					<h1>INCLUIR NOVO PARTICIPANTE</h1>
+				</div>
+			</div>
+			
+			
+			<form action="#" th:action="@{/salvar}" th:object="${corrida}" method="post">
+				
+				
+				
+				<div id="lista">
+				<div class="row">
+					<div class="col-md-1">CODIGO</div>
+					<div class="col-md-5"><input type="text" th:field="*{codigo}" readonly="readonly"></div>
+				</div>
+				
+				
+				<div class="row">
+					<div class="col-md-1">NOME</div>
+					<div class="col-md-5"><input type="text" th:field="*{nome}"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-1">SEXO</div>
+					<div class="col-md-5"><input type="text" th:field="*{sexo}"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-1">MOTO</div>
+					<div class="col-md-5"><input type="text" th:field="*{tipo}"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-1">CILINDRADA</div>
+					<div class="col-md-5"><input type="text" th:field="*{cilindrada}"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-1">TEMPO</div>
+					<div class="col-md-5"><input type="text" th:field="*{tempo}"></div>
+				</div>
+				
+				</div>
+				<br><div class="row">
+					<div class="col-md-12"><button class= "btn btn-primary btn-lg btn-block">Salvar</button></div>
+				</div>
+			
+			</form>
+			
+		</div>
+		<div class="container">
+			<a href="/home"><button class="btn btn-secondary btn-lg btn-block">Voltar</button></a>
+		
+		</div>
+	</body>
+
+</html>
